@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BACK OFFICE BARATH - FOSCAM</title>
+<style>
+/* MENU A GAUCHE */
+#menu{
+	position:fixed;
+	background:#99F;
+	
+}
+
+#bt_lance_AJAX {
+	background: none repeat scroll 0 0 #0099FF;
+	border-radius: 5px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: block;
+	float:none;
+	font-size: 16px;
+	height: 50px;
+	line-height: 46px;
+	text-align: center;
+	vertical-align: text-bottom;
+	width: 250px;
+	margin-top: 15px;
+}
+#bt_lance_AJAX:hover {
+	background:#F3F;
+}
+.styled-select select {
+	background: transparent;
+	border: 0 none;
+	border-radius: 0;
+	font-size: 16px;
+	height: 34px;
+	line-height: 1;
+	margin-left: 0;
+	padding: 5px;
+	width: 262px;
+	-webkit-appearance: none;
+}
+.styled-select {
+	background: url("fleche.png") no-repeat scroll 210px center #DDDDDD;
+	border: 1px solid #CCCCCC;
+	margin: 20px 5px 5px;
+	overflow: hidden;
+	padding: 0;
+	width: 240px;
+}
+table {
+	margin-left: 260px;
+	margin-top: 0px;
+	position: absolute;
+	width: 680px;
+}
+#precedent {
+	background: none repeat scroll 0 0 #CCCCCC;
+	border-radius: 15px;
+	cursor: pointer;
+	display: table;
+	margin-left: 10px;
+	margin-top: 20px;
+	text-align: center;
+	width: 50px;
+}
+#precedent:hover {
+	background:#F6C;
+}
+#suivant {
+	background: none repeat scroll 0 0 #CCCCCC;
+	border-radius: 15px;
+	cursor: pointer;
+	display: table;
+	margin-left: 197px;
+	margin-top: -20px;
+	text-align: center;
+	width: 50px;
+}
+#suivant:hover {
+	background:#F6C;
+}
+#deconnexion {
+	background: none repeat scroll 0 0 #CCCCCC;
+	border-radius: 15px;
+	cursor: pointer;
+	display: table;
+	height: 35px;
+	line-height: 36px;
+	margin-left: 0;
+	margin-top: 20px;
+	position: relative;
+	text-align: center;
+	width: 250px;
+}
+#deconnexion:hover {
+	background: none repeat scroll 0 0 #F6C;
+}
+
+/*   MENU A DROITE  */
+#menuDroit{
+	background: none repeat scroll 0 0 #9999FF;
+    float: right;
+    position: fixed;
+    right: 0;
+    z-index: 12;
+	width: 250px;
+}
+
+#bt_suprime_DOSSIER_IMAGE {
+	background: none repeat scroll 0 0 #0099FF;
+	border-radius: 5px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: block;
+	float:none;
+	font-size: 16px;
+	height: 50px;
+	line-height: 46px;
+	text-align: center;
+	vertical-align: text-bottom;
+	width: 250px;
+	margin-top: 15px;
+}
+
+#titreMenuD{
+	background: none repeat scroll 0 0 #CCCCCC;
+	border-radius: 15px;
+	display: table;
+	height: 35px;
+	line-height: 36px;
+	margin-left: 0;
+	margin-top: 20px;
+	position: relative;
+	text-align: center;
+	width: 250px;
+	
+}
+
+td a img{
+	
+height:130px;	
+	
+}
+
+
+td a img:hover{
+	
+    margin-left: -125px;
+    margin-top: -70px;
+	position:absolute;
+	height:350px;
+	
+}
+
+#progressBar {
+	
+width:10px;
+height:10px;
+background:#09F;
+position:absolute;
+margin-top:150px;
+margin-left:365px;	
+	
+}
+
+#afficheNbimg{
+	
+width:250px;
+height:10px;
+position:absolute;
+margin-top:170px;
+margin-left:565px;	
+	
+}
+
+
+</style>
+
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="menu"> 
+
+  <div id="deconnexion"> DECONNEXION </div>
+  
+  <!-- ANNEE -->
+  <div class="styled-select">
+    <select id="annee">
+      <option>Année</option>
+    </select>
+  </div>
+  
+  <!-- MOIS -->
+  <div class="styled-select">
+    <select id="mois">
+      <option>Mois</option>
+    </select>
+  </div>
+  
+  <!-- JOURS -->
+  <div class="styled-select">
+    <select id="jour">
+      <option>Jour</option>
+    </select>
+  </div>
+  
+  <!-- HEURE -->
+  <div class="styled-select">
+    <select id="heure">
+      <option>Heure</option>
+    </select>
+  </div>
+  <div id="precedent"> << </div>
+  <div id="suivant"> >> </div>
+  <div id="bt_lance_AJAX"> CHARGER DES IMAGES </div>
+</div>
+
+<div id="menuDroit"> 
+  <div id="titreMenuD"> GESTION DE NETTOYAGE </div>
+  <!-- ANNEE -->
+  <div class="styled-select">
+    <select id="anneeSup">
+      <option>Année</option>
+    </select>
+  </div>
+  
+  <!-- MOIS -->
+  <div class="styled-select">
+    <select id="moisSup">
+      <option>Mois</option>
+    </select>
+  </div>
+  
+  <!-- JOURS -->
+  <div class="styled-select">
+    <select id="jourSup">
+      <option>Jour</option>
+    </select>
+  </div>
+  
+  <!-- HEURE -->
+  <div class="styled-select">
+    <select id="heureSup">
+      <option>Heure</option>
+    </select>
+  </div>
+
+<div id="bt_suprime_DOSSIER_IMAGE"> SUPPRIMER LES IMAGES  </div> 
+
+<a href="supImage.html" target="_blank" > SUPPRIMER LES IMAGES < 7 JOURS </a>
+
+
+<br/>
+<span style="font-size:12px;">*PERMET DE SUPRIMER LES IMAGES DE PLUS D'UNE SEMAINE OU PAR SELECTION</span>
+
+</div>
+
+<div id="progressBar">  </div>
+
+<div id="afficheNbimg"> 0/0 </div>
+
+<table border="1" bgcolor="#999999">
+</table>
+</body>
+
+
+<script>
+
+/* FUNCTION QUI PERMET D'OUVRIR SUR UNE NOUVELLE FENETRE */ //requeteSUPP=1&debut=0&fin=1000&
+function PopupWindow(source, strWindowToOpen){
+	var strWindowFeatures = "toolbar=no,resize=no,titlebar=no,";
+	strWindowFeatures = strWindowFeatures + "menubar=no,width=630,height=430,maximize=null";
+	window.open(strWindowToOpen, '', strWindowFeatures); 
+} 
+
+</script>
+<script>
+
+/* OPTION MENU GAUCHE */
+ // ANNEE
+ for(var $i = 2015; $i>1990; $i--){
+	  
+	 $( "#annee" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ var tabMois=new Array("janvier","février","mars","avril","mai","juin","jullet","aout","septembre","octobre","novembre","decembre");
+ 
+ //MOIS
+ for(var $i = 1; $i<=12; $i++){
+	  
+	 $( "#mois" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ //JOURS
+ for(var $i = 1; $i<=31; $i++){
+	  
+	 $( "#jour" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+  //HEURE
+ for(var $i = 0; $i<=23; $i++){
+	  
+	 $( "#heure" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+		
+</script>
+
+<script>
+
+/* OPTION MENU DROITE */
+ // ANNEE
+ for(var $i = 2015; $i>1990; $i--){
+	  
+	 $( "#anneeSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ var tabMois=new Array("janvier","février","mars","avril","mai","juin","jullet","aout","septembre","octobre","novembre","decembre");
+ 
+ //MOIS
+ for(var $i = 1; $i<=12; $i++){
+	  
+	 $( "#moisSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ //JOURS
+ for(var $i = 1; $i<=31; $i++){
+	  
+	 $( "#jourSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+  //HEURE
+ for(var $i = 0; $i<=23; $i++){
+	  
+	 $( "#heureSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+		
+</script>
+
+
+<script>
+
+
+$("#bt_lance_AJAX").click( function(){
+	
+	envoieAJAX();
+	
+});
+
+/* GESTION DES SELECT MENU GAUCHE*/
+var $valAnnee;
+var $valMois;
+var $valJour;
+var $valHeure;
+
+$("#annee").click( function(){
+	$valAnnee = $('#annee option:selected').val();
+	console.log($('#annee option:selected').val());
+	
+});
+
+$("#mois").click( function(){
+	$valMois = $('#mois option:selected').val();
+	console.log($('#mois option:selected').val());
+	
+});
+
+$("#jour").click( function(){
+	$valJour = $('#jour option:selected').val();
+	console.log($('#jour option:selected').val());
+	
+});
+
+$("#heure").click( function(){
+	$valHeure = $('#heure option:selected').val();
+	console.log($('#heure option:selected').val());
+	
+});
+
+
+/* GESTION DES BT SUIVANT|PRECEDENT */
+var $valPrec = 0;
+var $valSuiv = 30;
+
+$("#precedent").click( function(){
+	
+	if($valPrec != 0){
+		
+		$valPrec = $valPrec - 30;
+		$valSuiv = $valSuiv - 30;
+		console.log($valPrec);
+		console.log($valSuiv);
+		envoieAJAX();
+	}
+	
+	
+});
+
+$("#suivant").click( function(){
+	
+		$valPrec = $valPrec + 30;
+		$valSuiv = $valSuiv + 30;
+		console.log($valPrec);
+		console.log($valSuiv);
+		envoieAJAX();
+	
+});
+
+/* GESTION DECONNEXION */
+$sessionDecon = 0;
+
+$("#deconnexion").click( function(){
+	
+	$sessionDecon = 1;
+	envoieAJAX();
+	
+});
+
+/* ECOUTEUR BT SUPPRIMER IMAGE */
+$valTempoSup = 0;
+
+$("#bt_suprime_DOSSIER_IMAGE").click( function(){
+	$valTempoSup = 1;
+	envoieAJAX();
+	//$valTempoSup = 0;
+	
+});
+
+/* GESTION DES SELECT MENU DROITE*/
+var $valAnneeSup;
+var $valMoisSup;
+var $valJourSup;
+var $valHeureSup;
+
+$("#anneeSup").click( function(){
+	$valAnneeSup = $('#anneeSup option:selected').val();
+	console.log($('#anneeSup option:selected').val());
+	
+});
+
+$("#moisSup").click( function(){
+	$valMoisSup = $('#moisSup option:selected').val();
+	console.log($('#moisSup option:selected').val());
+	
+});
+
+$("#jourSup").click( function(){
+	$valJourSup = $('#jourSup option:selected').val();
+	console.log($('#jourSup option:selected').val());
+	
+});
+
+$("#heureSup").click( function(){
+	$valHeureSup = $('#heureSup option:selected').val();
+	console.log($('#heureSup option:selected').val());
+	
+});
+
+
+
+
+var incNbimg = 0;
+var tableLenght = 0;
+var pourcentBarre = 0;
+
+// FUNCTION QUI ANIM LE PROGRESSBAR ET AFFICHE LES POURCENTAGES
+function animNbImg(nbImg,tailleTable){
+	
+	if(incNbimg == 0){
+		
+		tableLenght = parseInt(tailleTable);
+		
+	}
+	
+	 incNbimg = incNbimg + parseInt(nbImg);
+	 pourcentBarre = (incNbimg/tableLenght)*100;
+
+	 $("#progressBar").animate({ "width": pourcentBarre+15  }, 200);
+
+	 $("#afficheNbimg").html( parseInt(pourcentBarre) +"%"  +"<br/> Nombre d'image enregistré : "+  incNbimg  + "<br/> Nombre d'image total : " + tableLenght + " ----- Images restant dans le dossier racine : " + parseInt(tailleTable) );
+	
+}
+
+
+	/**** METHODE POST EN AJAX ****/
+	function envoieAJAX(){
+		
+		var formData = {requeteAJAX:"demandeDATA", annee:$valAnnee, mois:$valMois, jour:$valJour, precedent:$valPrec, heure:$valHeure, suivant:$valSuiv, sessionAdmin:$sessionDecon, requeteSUPP:$valTempoSup, anneeSup:$valAnneeSup, moisSup:$valMoisSup, jourSup:$valJourSup, heureSup:$valHeureSup};
+	
+		$.ajax({ // fonction permettant de faire de l'ajax
+		   type: "POST", // methode de transmission des données au fichier php
+		   url: "site-galerie.php", // url du fichier php
+		   data: formData, // données à transmettre
+		   success: function(msg){ // si l'appel a bien fonctionné
+				
+				
+				//console.log(msg[0]);
+				$("table").html(msg);
+				
+				//$("body").html(msg);
+				
+				//GESTION DE RAPPEL DE LA FUNCTION envoieAJAX /* a chaque 50 images sauvegardés on affiche ce qu'il reste */
+				
+				var tailleTable = $("#tailleTableImg").text();
+				var nbImg = $("#nbImg").text();
+
+				//alert(nbImg);
+				//alert(tailleTable);
+				
+				if(nbImg<tailleTable){
+					
+					animNbImg(nbImg,tailleTable);
+					$( "#tailleTableImg" ).remove();
+					$( "#nbImg" ).remove();
+					
+					envoieAJAX();
+				}
+			
+		   }
+		});
+		return false; // permet de rester sur la même page à la soumission du formulaire
+		
+	}
+
+
+ /*jQuery("#formID").bind("jqv.field.result", function(event, field, errorFound, prompText){ 
+			if(errorFound==false)
+			{
+				envoieAJAX();
+			}
+			
+			}); */
+
+</script>
+
+
+
+</html>

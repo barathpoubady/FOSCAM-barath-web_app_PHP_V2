@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>BACK OFFICE FOSCAM BARATH</title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Page-Level Plugin CSS - Tables -->
+    <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    
+    
+    <style>
+	
+	@media screen and (max-width: 750px){
+		
+	  #menu{
+		  
+	    position: absolute;
+		top: 101px;
+		width: 100%;
+		z-index: 1;
+		
+	  }
+		
+		
+	}
+
+	</style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; position:fixed; width:100%;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BACK OFFICE - FOSCAM</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="http://www.cronjobonline.com/tache_cronjobs.html"><i class="fa fa-gear fa-fw"></i>CRON <br /> <span style="font-size:9px;">cronjobonline.com <br /> id : poubady.barath@gmail.com <br /> mdp : rm2tbabd</span></a>
+                        </li>
+                        <li><a href="http://www.cronjobonline.com/tache_cronjobs.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a id="deconnexion" href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+        </nav>
+        <!-- /.navbar-static-top -->
+
+        <nav id="menu" class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-1x fa-adjust fa-book"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li>
+                        <a id="btAccueil" href="index.html"><i class="fa fa-camera fa-fw"></i> Accueil</a>
+                    </li>
+                    <li>
+                        <a id="btVideo" href="#"><i class="fa fa-camera fa-fw"></i> Video</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Recherche<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                            				<!-- ANNEE -->
+                                    <label style="color:#CCC"> ANN&Eacute;E </label>
+                                    <select id="annee" class="form-control small">
+                                     <option class="fa fa-calendar fa-bold" disabled=""> <strong>ANN&Eacute;E</strong> </option>
+                                    </select>
+                                    
+                                    <label style="color:#CCC"> MOIS </label>
+                                    <!-- MOIS -->
+                                    <select id="mois" class="form-control">
+                                      <option class="fa fa-calendar fa-bold" disabled=""> <strong>MOIS</strong> </option>
+                                    </select>
+                                    
+                                    <label style="color:#CCC"> JOURS </label>
+                                    <!-- JOURS -->
+                                    <select id="jour" class="form-control">
+                                     <option class="fa fa-calendar fa-bold" disabled=""> <strong>JOURS</strong> </option>
+                                    </select>
+                                    
+                                    <label style="color:#CCC"> HEURE </label>
+                                    <!-- HEURE -->
+                                    <select id="heure" class="form-control">
+                                     <option class="fa fa-times" disabled=""> <strong>HEURE</strong> </option>
+                                    </select>
+                                    
+                            </li>
+                            <br />
+                            <li>
+                                <a id="bt_lance_AJAX" class="btn btn-success text-center" href="#">Lancer la recherche</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a id="bt_charge_last_image" href="#" data-toggle="modal" data-target="#ModalCharge"><i class="fa fa-upload fa-fw"></i> Chargez des images </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-trash-o fa-fw"></i> Supprimer <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Selectionner <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                    <br />
+                                    <!-- ANNEE -->
+                                    <select id="anneeSup" class="form-control small">
+                                    
+                                    </select>
+                                    <br />
+                                    <!-- MOIS -->
+                                    <select id="moisSup" class="form-control">
+                                      
+                                    </select>
+                                    <br />
+                                    <!-- JOURS -->
+                                    <select id="jourSup" class="form-control">
+                                     
+                                    </select>
+                                    <br />
+                                    <!-- HEURE -->
+                                    <select id="heureSup" class="form-control">
+                                     
+                                    </select>
+                                    </li>
+                                    <li>
+                                    <br />
+                            
+                            <div class="alert alert-warning alert-dismissable">
+                            <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                             <p class="alert-link">ATTENTION</p><br />le boutton ci-dessous supprime les images de la selection.
+                            </div>
+                            <button id="bt_suprime_DOSSIER_IMAGE_SELECT" class="btn btn-outline btn-warning btn-sm btn-block " data-toggle="modal" data-target="#ModalSupprimeSelection" type="button">Supprimer</button> 
+                           			</li>
+                                </ul>
+                                <!-- /.nav-third-level -->
+                            </li>
+                            <li>
+                            <br />
+                            
+                            <div class="alert alert-danger alert-dismissable">
+                            <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                             <p class="alert-link">ATTENTION</p><br />le boutton ci-dessous supprime toutes les images inferieur à une semaine.
+                            </div>
+                            
+                                <button id="bt_suprime_DOSSIER_IMAGE" class="btn btn-danger btn-sm btn-block " data-toggle="modal" data-target="#ModalSupprime" type="button">
+                                		Supprimer
+                                </button>
+
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                  
+                </ul>
+                <!-- /#side-menu -->
+            </div>
+            <!-- /.sidebar-collapse -->
+        </nav>
+        <!-- /.navbar-static-side -->
+        
+        
+<!-- Modal appel chargeImage.html  -->
+<div class="modal fade" id="ModalCharge" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <iframe src="http://strigidae.agence.free.fr/video_cam/site/test/chargeImage.html" width="100%" height="350" frameborder="0" scrolling="yes" style="overflow:hidden;">
+           <p>Your browser does not support iframes.</p>
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+         
+<!-- Modal appel supprimeImageParSelection.html  -->
+<div class="modal fade" id="ModalSupprimeSelection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <iframe src="http://strigidae.agence.free.fr/video_cam/site/test/supImage.html" width="100%" height="350" frameborder="0" scrolling="yes" style="overflow:hidden;">
+           <p>Your browser does not support iframes.</p>
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal --> 
+        
+ <!-- Modal appel supprimeImage.html  -->
+<div class="modal fade" id="ModalSupprime" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <iframe src="http://strigidae.agence.free.fr/video_cam/site/test/supImage.html" width="100%" height="350" frameborder="0" scrolling="yes" style="overflow:hidden;">
+           <p>Your browser does not support iframes.</p>
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+                
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tables</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+            	<div class="col-lg-12">
+           	 	    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Notifications 
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-warning fa-fw"></i> Espace mémoire sur le serveur FTP
+                                    <span id="notif_EspaceFTP" class="pull-right text-muted small"><em> </em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-tasks fa-fw"></i> Dernier chargement d'image
+                                    <span id="notif_Date_lastImg" class="pull-right text-muted small"><em> </em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-upload fa-fw"></i> Nombre de capture total enregistré
+                                    <span id="nb_image_total" class="pull-right text-muted small"><em> </em>
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- /.list-group -->
+                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+               </div>
+               <!-- /.col-lg-12 -->
+                
+               <div id="bloc_info" style="display:none;">
+                
+               </div>
+                
+                
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-11">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            DataTables Advanced Tables
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                   
+                                <!--   <thead>
+                                        <tr>
+                                                <th>PHOTOS</th>
+                                                <th>DATE</th>
+                                                <th>HEURE</th>
+                                                <th>TELECHARGEMENT</th>
+                                                <th>INFOS +</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>             
+                                        <tr class="odd gradeX">
+                                            <td> 
+                                            <a href="javascript:PopupWindow(this,'."'".'http://strigidae.agence.free.fr/video_cam/site/test/'.$lienIMG.' '."'".');"><img src="'.$lienIMG.'" widht="100" height="100"/></a>
+                                            </td>
+                                            <td>'.$date.'</td>
+                                            <td>'.$heure.'</td>
+                                            <td class="center"><a href="envoi_image.php?fileID='.$aData['id'].'">Cliquer ici pour télécharger l\'image </a> </td>
+                                            <td class="center">2</td>
+										</tr>
+                                    </tbody>-->
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                            <div class="well">
+                                <h4>DataTables Usage Information</h4>
+                                <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
+                                <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- Page-Level Plugin Scripts - Tables -->
+    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="js/sb-admin.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    function pagination() {
+        $('#dataTables-example').dataTable();
+    };
+    </script>
+
+    <!-- GESTION AJAX -->
+    <script>
+
+/* FUNCTION QUI PERMET D'OUVRIR SUR UNE NOUVELLE FENETRE */ //requeteSUPP=1&debut=0&fin=1000&
+function PopupWindow(source, strWindowToOpen){
+	var strWindowFeatures = "toolbar=no,resize=no,titlebar=no,";
+	strWindowFeatures = strWindowFeatures + "menubar=no,width=630,height=430,maximize=null";
+	window.open(strWindowToOpen, '', strWindowFeatures); 
+} 
+
+</script>
+
+<script>
+
+/* OPTION MENU GAUCHE */
+ // ANNEE
+ for(var $i = 2015; $i>1990; $i--){
+	  
+	 $( "#annee" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ var tabMois=new Array("janvier","février","mars","avril","mai","juin","jullet","aout","septembre","octobre","novembre","decembre");
+ 
+ //MOIS
+ for(var $i = 1; $i<=12; $i++){
+	  
+	 $( "#mois" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ //JOURS
+ for(var $i = 1; $i<=31; $i++){
+	  
+	 $( "#jour" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+  //HEURE
+ for(var $i = 0; $i<=23; $i++){
+	  
+	 $( "#heure" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+		
+</script>
+
+<script>
+
+/* OPTION MENU DROITE */
+ // ANNEE
+ for(var $i = 2015; $i>1990; $i--){
+	  
+	 $( "#anneeSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ var tabMois=new Array("janvier","février","mars","avril","mai","juin","jullet","aout","septembre","octobre","novembre","decembre");
+ 
+ //MOIS
+ for(var $i = 1; $i<=12; $i++){
+	  
+	 $( "#moisSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+ //JOURS
+ for(var $i = 1; $i<=31; $i++){
+	  
+	 $( "#jourSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+ 
+  //HEURE
+ for(var $i = 0; $i<=23; $i++){
+	  
+	 $( "#heureSup" ).append( "<option>"+$i+"</option>" );
+	 
+ }
+		
+</script>
+
+
+<script>
+
+var $etatBtCharge;
+
+/* GESTION DES SELECT MENU GAUCHE*/
+var $valAnnee;
+var $valMois;
+var $valJour;
+var $valHeure;
+
+$("#annee").click( function(){
+	$valAnnee = $('#annee option:selected').val();
+	console.log($('#annee option:selected').val());
+	
+});
+
+$("#mois").click( function(){
+	$valMois = $('#mois option:selected').val();
+	console.log($('#mois option:selected').val());
+	
+});
+
+$("#jour").click( function(){
+	$valJour = $('#jour option:selected').val();
+	console.log($('#jour option:selected').val());
+	
+});
+
+$("#heure").click( function(){
+	$valHeure = $('#heure option:selected').val();
+	console.log($('#heure option:selected').val());
+	
+});
+
+
+/* GESTION DES BT SUIVANT|PRECEDENT OU DES LIMIT */
+var $valPrec = 0;
+var $valSuiv = 700;
+
+$("#precedent").click( function(){
+	
+	if($valPrec != 0){
+		
+		$valPrec = $valPrec - 30;
+		$valSuiv = $valSuiv - 30;
+		console.log($valPrec);
+		console.log($valSuiv);
+		envoieAJAX();
+	}
+	
+	
+});
+
+$("#suivant").click( function(){
+	
+		$valPrec = $valPrec + 30;
+		$valSuiv = $valSuiv + 30;
+		console.log($valPrec);
+		console.log($valSuiv);
+		envoieAJAX();
+	
+});
+
+/* GESTION DECONNEXION */
+$sessionDecon = 0;
+
+$("#deconnexion").click( function(){
+	
+	$sessionDecon = 1;
+	envoieAJAX();
+	
+});
+
+/* ECOUTEUR BT SELECTION IMAGE */
+$("#bt_lance_AJAX").click( function(){
+	
+	$etatBtCharge = "demandeDATA_SELECT";
+	envoieAJAX();
+	
+});
+
+var $valTempoSup;
+
+/* GESTION DES SELECT MENU DROITE SUPPRIMER PAR SELECTION*/
+var $valAnneeSup;
+var $valMoisSup;
+var $valJourSup;
+var $valHeureSup = 666;
+
+$("#anneeSup").click( function(){
+	$valAnneeSup = $('#anneeSup option:selected').val();
+	console.log($('#anneeSup option:selected').val());
+	
+});
+
+$("#moisSup").click( function(){
+	$valMoisSup = $('#moisSup option:selected').val();
+	console.log($('#moisSup option:selected').val());
+	
+});
+
+$("#jourSup").click( function(){
+	$valJourSup = $('#jourSup option:selected').val();
+	console.log($('#jourSup option:selected').val());
+	
+});
+
+$("#heureSup").click( function(){
+	$valHeureSup = $('#heureSup option:selected').val();
+	console.log($('#heureSup option:selected').val());
+	
+});
+
+$("#bt_suprime_DOSSIER_IMAGE_SELECT").click( function(){
+
+$("#ModalSupprimeSelection .modal-body").html('<iframe id="frame" src="http://strigidae.agence.free.fr/video_cam/site/test/supImageSelection.php?anneeSup='+$valAnneeSup+'&moisSup='+$valMoisSup+'&jourSup='+$valJourSup+'&heureSup='+$valHeureSup+'" width="100%" height="350" frameborder="0" scrolling="yes" style="overflow:hidden;"><p>Your browser does not support iframes.</p></iframe>');
+	
+});
+
+$(document).ready( function(){
+
+	$etatBtCharge = "demandeAFFICHE_DATA";
+	envoieAJAX();
+	
+});
+
+
+/* GESTION BT ACCUEIL */
+$("#btAccueil").click( function(){
+	
+	$etatBtCharge = "demandeAFFICHE_DATA";
+	envoieAJAX();
+	
+});
+
+
+/* GESTION BT VIDEO */
+$("#btVideo").click( function(){
+	
+	$etatBtCharge = "demandeAFFICHE_VIDEO";
+	videoAJAX();
+	
+});
+
+
+	/**** METHODE POST EN AJAX ****/
+	function envoieAJAX(){
+		
+		var formData = {requeteAJAX:$etatBtCharge, annee:$valAnnee, mois:$valMois, jour:$valJour, precedent:$valPrec, heure:$valHeure, suivant:$valSuiv, sessionAdmin:$sessionDecon, };
+	
+		$.ajax({ // fonction permettant de faire de l'ajax
+		   type: "POST", // methode de transmission des données au fichier php
+		   url: "site-galerie.php", // url du fichier php
+		   data: formData, // données à transmettre
+		   success: function(msg){ // si l'appel a bien fonctionné
+				
+				$('#dataTables-example').remove();
+				$(".table-responsive").html('<table class="table table-striped table-bordered table-hover" id="dataTables-example">');
+				//alert("ok");
+				//console.log(msg[0]);
+				$("table").html(msg);
+				pagination();
+
+								
+				//$("body").html(msg);
+				
+				//GESTION DE RAPPEL DE LA FUNCTION envoieAJAX /* a chaque 50 images sauvegardés on affiche ce qu'il reste */
+				
+			//	var tailleTable = $("#tailleTableImg").text();
+			//	var nbImg = $("#nbImg").text();
+
+				//alert(nbImg);
+				//alert(tailleTable);
+				
+				/*if(nbImg<tailleTable){
+					
+					animNbImg(nbImg,tailleTable);
+					$( "#tailleTableImg" ).remove();
+					$( "#nbImg" ).remove();
+					
+					envoieAJAX();
+				}*/
+			
+		   }
+		}) .always(function() {
+					
+					demandeNotifAJAX();
+					
+			});
+		return false; // permet de rester sur la même page à la soumission du formulaire
+		
+	}
+
+
+/**** METHODE POST EN AJAX - POUR LES NOTIFICATIONS ****/
+	function demandeNotifAJAX(){
+		
+		var formData = {notification:"demandeNotif"};
+	
+		$.ajax({ // fonction permettant de faire de l'ajax
+		   type: "POST", // methode de transmission des données au fichier php
+		   url: "site-galerie.php", // url du fichier php
+		   data: formData, // données à transmettre
+		   success: function(msg){ // si l'appel a bien fonctionné
+
+			  $("#bloc_info").html(msg);
+			   
+			  $("#notif_EspaceFTP").html($("#espaceUse").text()); 
+			  $("#notif_Date_lastImg").html("Le <strong>" + $("#date_derniereImgCharge").text() +"</strong> à <strong>"+ $("#heure_derniereImgCharge").text() + "</strong>");
+			  $("#nb_image_total").html($("#nb_image_bdd").text()); 
+
+		   }
+		});
+		return false; // permet de rester sur la même page à la soumission du formulaire
+		
+	}
+
+/**** METHODE POST EN AJAX - POUR LES IMAGES EN VIDEO ****/
+	function videoAJAX(){
+		
+		var formData = {requeteAJAX:$etatBtCharge};
+	
+		$.ajax({ // fonction permettant de faire de l'ajax
+		   type: "POST", // methode de transmission des données au fichier php
+		   url: "site-galerie.php", // url du fichier php
+		   data: formData, // données à transmettre
+		   success: function(msg){ // si l'appel a bien fonctionné
+				
+			  //appel de la methode JSON
+			  JSON(msg);
+			  /*$('#dataTables-example').remove();
+		      $(".table-responsive").html('<div id="video_bloc"> '+msg+'</div>');*/
+				
+		   }
+		});
+		return false; // permet de rester sur la même page à la soumission du formulaire
+		
+	}
+	
+	//METHODE PARSE JSON
+	function JSON(dataTableJSON){
+		var obj = $.parseJSON(dataTableJSON);
+		
+		$('#dataTables-example').remove();
+		
+		//champs
+		$imageDebut = 5000; // varialbe de debut 
+		$taille = 1000; //Taille de nb image à charger
+		
+		$tailleTotale = $imageDebut + $taille;
+		
+		//zone / bloc ou les images défile
+		$(".table-responsive").html('<div id="video_bloc"></div>');
+		
+		//bt pause
+		$(".table-responsive").append('<div id="pause" style="width:20px; height:20px; background:#22c6f5;"> </div>');
+		
+		//appel de la fonction qui charge les images
+		chargeImage($imageDebut, $tailleTotale, obj);
+		playVideoJPEG(obj);
+		// ajout du bloc image
+		$("#video_bloc").append("<div id='comp'> </div>");
+
+					
+	}
+	
+	/* FUNCTION CHARGE IMAGE VIDEO JPEG */
+		function chargeImage($j, $tailleTotale, obj){
+			
+			for(var $j=$j; $j<$tailleTotale;$j++){
+				//console.log(obj[$j]);
+				$("#video_bloc").append("<div id='image"+$j+"'><img src='"+obj[$j]+"' width='450'/></div>");
+				$("#image"+$j).hide();//document.getElementById .style.opacity="0"
+				
+			}
+			
+		}
+	
+	
+	$(".panel-body, .table-responsive, #pause").click( function(){
+		
+		
+		
+	});
+	
+	/* FUNCTION PLAY */
+	function playVideoJPEG(obj){
+		
+		// boucle récursive
+		setInterval(function(){
+			
+			$imageDebut++;
+			$oldImage = $imageDebut - 1;
+			
+			$("#comp").html($imageDebut);
+			
+			$("#image"+$oldImage).remove();//.style.opacity="0"
+
+			$("#image"+$imageDebut).show();//.style.opacity="1"
+			
+			if($imageDebut == ($tailleTotale - 100)){
+
+				chargeImage($tailleTotale, $tailleTotale + 600, obj);
+				$tailleTotale = $tailleTotale + 500;
+				
+			}
+			
+		},300);
+		
+	}
+
+
+ /*jQuery("#formID").bind("jqv.field.result", function(event, field, errorFound, prompText){ 
+			if(errorFound==false)
+			{
+				envoieAJAX();
+			}
+			
+			}); */
+
+</script>
+    
+
+</body>
+
+</html>

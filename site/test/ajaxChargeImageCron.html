@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SUpprime image Cron</title>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<div id="divInfo">
+
+</div>
+
+
+<script>
+
+$(document).ready(function(){
+	
+	/*$debut = 0;
+	$fin = 100;*/
+	$premierCharge = 0;
+	ajaxPost();
+	
+	
+});
+
+function ajaxPost(){
+	
+	var jqxhr = $.post( "chargeImageCron.php", { supImgCron:"okChargeImgCron", premCharge:$premierCharge})
+	.done(function( data ) {
+		
+				$("#divInfo").html(data);
+				
+				//GESTION DE RAPPEL DE LA FUNCTION envoieAJAX /* a chaque 50 images sauvegardés on affiche ce qu'il reste */
+				
+				//recupére les valeurs des div envoie en AJAX de la BDD
+				var tailleTable = $("#tailleTableImg").text();
+				var nbImg = $("#nbImg").text();
+
+					
+					if(tailleTable != 0){
+
+						$( "#tailleTableImg" ).remove();
+						$( "#nbImg" ).remove();
+						
+						ajaxPost();
+						
+					}else{
+							
+						
+					}
+		
+		
+	})
+	.fail(function() {
+	//alert( "error" );
+	})
+	.always(function() {
+	//alert( "finished" );
+	});
+	// Perform other work here ...
+	// Set another completion function for the request above
+	jqxhr.always(function() {
+	//alert( "second finished" );
+	});
+	
+	
+	
+}
+
+
+</script>
+</body>
+</html>

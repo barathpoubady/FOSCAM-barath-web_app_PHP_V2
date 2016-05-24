@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SUpprime image Cron</title>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+
+<script>
+
+$(document).ready(function(){
+	
+	$debut = 0;
+	$fin = 100;
+	
+	ajaxPost($debut,$fin);
+	
+	
+});
+
+function ajaxPost($debut, $fin){
+	
+	var jqxhr = $.post( "supprimeImageCron.php", { supImgCron:"okSuppImgCron", debut:$debut, fin:$fin})
+	.done(function( data ) {
+		//	alert( "second success"+data  );
+		if(data != "finSuppImgCron"){
+			$debut = $debut + 100;
+			ajaxPost($debut, $fin);
+		}
+	})
+	.fail(function() {
+	//alert( "error" );
+	})
+	.always(function() {
+	//alert( "finished" );
+	});
+	// Perform other work here ...
+	// Set another completion function for the request above
+	jqxhr.always(function() {
+	//alert( "second finished" );
+	});
+	
+	
+	
+}
+
+
+</script>
+</body>
+</html>

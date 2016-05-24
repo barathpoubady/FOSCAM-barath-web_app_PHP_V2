@@ -1,0 +1,60 @@
+#Oblige la lecture des htaccess sur les server
+#RewriteBase /
+
+#proteger le fichier install.php de tous le monde
+#<Files install.php>
+
+	#Order allow,deny 
+	#deny from all
+	#Satisfy all
+
+#</Files>
+
+
+#evite le listage des dossiers
+#Options -Indexes
+
+#maintenance du site
+#<IfModule mod_rewrite.c>
+	#RewriteEngine on
+	#RewriteCond %{REMOTE_ADDR} !^83\.152\.142\.165$
+	#RewriteCond %{REQUEST_URI} !^/page_maintenance/maintenance\.html$
+	#RewriteCond %{REQUEST_FILENAME} !\.(gif|png|jpg|jpeg|jfif|bmp|css|js)$ [NC]
+	#RewriteRule ^(.*)$ http://topvideoweb.olympe.in/page_maintenance/maintenance.html [R=307,L]
+#</IfModule>
+
+
+#AUTORISE L'ACCES AU FICHIER RACINE QUE POUR L'ADD IP : 
+#<FilesMatch ".*">
+
+	#Order Deny,Allow
+	#Deny from all
+	#Allow from 83.152.142.165
+
+#</FilesMatch>
+
+#PROTEGE LE FICHIER WP_CONFIG.php
+
+#EVITE DE SE FAIRE EMPRUNTE LES FICHIERS
+
+#PERMET DE CONFIGURER LE SERVER APACHE DE MANIERE MINIMALE
+<IfDefine Free>
+php 1
+</IfDefine>
+
+#EXCLURE LES DIRECTIVES DE CONFIG DU SERVEUR FREE
+#<IfDefine !Free>
+AddType application/x-httpd-php5 .php
+</IfDefine>
+
+#ACCES AU HTPASSWD POUR LES SERVER CONFIG AVEC FREE
+#PerlSetVar AuthFile /video_cam/common/mdp_passwd/.htpasswd
+#AuthName "Page protegee par bp"
+#AuthType Basic
+#require valid-user
+
+
+
+
+
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BACK OFFICE BARATH - FOSCAM</title>
+<style>
+
+
+#progressBar {
+	
+width:10px;
+height:10px;
+background:#09F;
+position:absolute;
+margin-top:150px;
+margin-left:365px;	
+	
+}
+
+#afficheNbimg{
+	
+width:550px;
+height:10px;
+position:absolute;
+margin-top:170px;
+margin-left:565px;	
+	
+}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="progressBar">  </div>
+
+<div id="afficheNbimg"> 0/0 </div>
+
+<table border="1" bgcolor="#999999">
+</table>
+</body>
+
+<script>
+
+$valTempoSup = 1;
+
+$(document).ready( function(){
+
+	envoieAJAX();
+	
+});
+
+
+/* GESTION DE L'AFFICHAGE */
+var incNbimg = 0;
+var tableLenght = 0;
+var pourcentBarre = 0;
+var limit = 500;
+
+// FUNCTION QUI ANIM LE PROGRESSBAR ET AFFICHE LES POURCENTAGES
+function animNbImg(nbImg,tailleTable){
+	
+	if(incNbimg == 0){
+		
+		tableLenght = parseInt(tailleTable);
+		
+	}
+	
+	 limit = limit + parseInt(nbImg);
+	 incNbimg = incNbimg + parseInt(nbImg);
+	 pourcentBarre = (incNbimg/tableLenght)*100;
+
+	 $("#progressBar").animate({ "width": pourcentBarre+15  }, 200);
+
+	 $("#afficheNbimg").html( parseInt(pourcentBarre) +"%"  +"<br/> Nombre d'image supprimé : "+  incNbimg  + "<br/> Nombre d'image total : " + tableLenght + " ----- Images restant dans le dossier racine : " + parseInt(tailleTable) );
+	
+}
+
+
+	/**** METHODE POST EN AJAX ****/
+	function envoieAJAX(){
+		
+		var formData = {requeteSUPP:$valTempoSup, debut:incNbimg, fin:limit};
+	
+		$.ajax({ // fonction permettant de faire de l'ajax
+		   type: "POST", // methode de transmission des données au fichier php
+		   url: "site-galerie.php", // url du fichier php
+		   data: formData, // données à transmettre
+		   success: function(msg){ // si l'appel a bien fonctionné
+				
+				
+				//console.log(msg[0]);
+				$("table").html(msg);
+				
+				//$("body").html(msg);
+				
+				//GESTION DE RAPPEL DE LA FUNCTION envoieAJAX /* a chaque 50 images sauvegardés on affiche ce qu'il reste */
+				
+				var tailleTable = $("#tailleTableImg").text();
+				var nbImg = $("#nbImg").text();
+
+				//alert(nbImg);
+				//alert(tailleTable);
+				
+				if(incNbimg<tailleTable){
+					
+					animNbImg(nbImg,tailleTable);
+					$( "#tailleTableImg" ).remove();
+					$( "#nbImg" ).remove();
+					
+					envoieAJAX();
+				}
+			
+		   }
+		});
+		return false; // permet de rester sur la même page à la soumission du formulaire
+		
+	}
+
+
+ /*jQuery("#formID").bind("jqv.field.result", function(event, field, errorFound, prompText){ 
+			if(errorFound==false)
+			{
+				envoieAJAX();
+			}
+			
+			}); */
+
+</script>
+
+
+
+</html>
